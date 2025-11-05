@@ -53,6 +53,7 @@ nav .container {
     color: var(--primary-color);
 }
 
+/* Style Navigasi Desktop */
 nav ul {
     display: flex;
     list-style: none;
@@ -72,6 +73,37 @@ nav ul li a {
 nav ul li a:hover {
     color: var(--primary-color);
 }
+
+/* --- Style untuk Navigasi Mobile Interaktif --- */
+
+/* 1. Style Tombol Hamburger */
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+    flex-direction: column;
+    gap: 5px; /* Jarak antar garis */
+    cursor: pointer;
+    z-index: 1002; /* Pastikan di atas segalanya */
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* 2. Animasi "X" saat menu aktif */
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
 
 /* Bagian Hero */
 .hero {
@@ -156,45 +188,7 @@ section h2 {
     font-size: 1.1rem;
 }
 
-/* Keahlian */
-/* Ini adalah style dasar .skill-item Anda */
-.skill-item {
-    background-color: var(--bg-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    font-weight: 500;
-    border: 1px solid #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Tambahkan box-shadow & border-color */
-    
-    /* Jika Anda pakai Opsi 2 (ikon), biarkan display flex, dll. */
-    display: flex; /* Jika pakai ikon */
-    flex-direction: column; /* Jika pakai ikon */
-    align-items: center; /* Jika pakai ikon */
-    justify-content: center; /* Jika pakai ikon */
-    gap: 10px; /* Jika pakai ikon */
-    min-height: 120px; /* Jika pakai ikon */
-}
-
-/* Ini adalah efek saat kursor di atasnya */
-.skill-item:hover {
-    transform: translateY(-8px) scale(1.03); /* Sedikit naik dan sedikit membesar */
-    border-color: var(--primary-color);      /* Border berubah warna */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Tambahkan bayangan */
-    background-color: #2a2a2a; /* Sedikit lebih terang dari bg-color */
-}
-
-/* Jika Anda menggunakan ikon, pastikan ikon juga terlihat bagus saat hover */
-.skill-item:hover img {
-    filter: brightness(1.2); /* Sedikit mencerahkan ikon */
-}
-
-/* Jika Anda menggunakan ikon, dan ingin teksnya berubah warna */
-.skill-item:hover span {
-    color: var(--primary-color); /* Teks skill berubah warna */
-}
-
-/* --- Style untuk Keahlian dengan Progress Bar (Opsi 2) --- */
-
+/* --- Style untuk Keahlian dengan Progress Bar --- */
 .skills-list {
     max-width: 800px; /* Batasi lebar agar tidak terlalu melebar di layar besar */
     margin: 0 auto;
@@ -226,7 +220,7 @@ section h2 {
     font-weight: 600;
     color: var(--primary-color);
 }
-/* TAMBAHKAN INI UNTUK MENGATUR IKON DEVicon */
+
 .skill-name i {
     font-size: 30px;  /* Atur ukuran ikon di sini */
     line-height: 1; /* Membantu perataan vertikal */
@@ -252,16 +246,6 @@ section h2 {
     font-size: 0.95rem;
     color: var(--text-secondary);
     text-align: right;
-}
-
-/* Responsif untuk layar kecil */
-@media (max-width: 600px) {
-    .skill-item-progress {
-        padding: 1rem;
-    }
-    .skill-name {
-        font-size: 1.1rem;
-    }
 }
 
 /* Proyek */
@@ -360,17 +344,58 @@ footer {
     color: var(--text-secondary);
 }
 
-/* Responsif untuk HP */
+/* --- Media Query untuk Responsif --- */
+
+/* Aturan untuk Mobile (Navigasi Interaktif) */
 @media (max-width: 768px) {
+
+    /* Tampilkan tombol hamburger di mobile */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Sembunyikan menu desktop */
+    nav ul#nav-links {
+        /* Layout Menu Fullscreen */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* 100% tinggi layar */
+        background-color: var(--surface-color); /* Latar belakang menu */
+        
+        /* Posisikan link di tengah */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem; /* Jarak antar link menu */
+
+        /* Sembunyikan di luar layar (ke atas) */
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-out;
+        z-index: 1001; /* Tepat di bawah tombol hamburger */
+
+        /* Reset style desktop */
+        margin-left: 0; 
+    }
+
+    /* Style untuk memunculkan menu */
+    nav ul#nav-links.nav-active {
+        transform: translateY(0); /* Munculkan menu */
+    }
+
+    /* Perbesar teks link di menu mobile */
+    nav ul#nav-links li a {
+        font-size: 1.5rem; /* Buat link lebih besar */
+    }
+
+    /* Penyesuaian Ukuran Font & Padding Umum di Mobile */
     .hero h1 {
         font-size: 2.5rem;
     }
     .hero h2 {
         font-size: 1.5rem;
-    }
-
-    nav ul {
-        display: none; /* Sembunyikan menu di HP untuk versi simpel ini */
     }
 
     section {
@@ -380,5 +405,15 @@ footer {
     section h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
+    }
+}
+
+/* Aturan Responsif Keahlian (Progress Bar) */
+@media (max-width: 600px) {
+    .skill-item-progress {
+        padding: 1rem;
+    }
+    .skill-name {
+        font-size: 1.1rem;
     }
 }
