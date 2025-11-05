@@ -48,5 +48,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', animateSkills);
     animateSkills(); // Panggil saat DOMContentLoaded untuk kasus sudah di-scroll
 });
+/* --- Kode untuk Navigasi Mobile --- */
+
+// Ambil elemen yang dibutuhkan
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('#nav-links');
+
+// Tambahkan event 'click' pada tombol hamburger
+menuToggle.addEventListener('click', () => {
+    // Toggle class 'nav-active' pada menu
+    navLinks.classList.toggle('nav-active');
+    
+    // Toggle class 'is-active' pada tombol (untuk animasi "X")
+    menuToggle.classList.toggle('is-active');
+});
+
+// Tambahan: Tutup menu saat salah satu link diklik
+document.querySelectorAll('#nav-links li a').forEach(link => {
+    link.addEventListener('click', () => {
+        // Cek apakah menu sedang terbuka
+        if (navLinks.classList.contains('nav-active')) {
+            navLinks.classList.remove('nav-active');
+            menuToggle.classList.remove('is-active');
+        }
+    });
+});
 // Anda bisa menambahkan script lain di sini
 // Misalnya untuk animasi mengetik (typing animation)
