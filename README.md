@@ -1,17 +1,6 @@
 # Portofolio Pribadi - Faqih Al Bashori
 
 Selamat datang di repositori portofolio pribadi saya. Website ini adalah rangkuman digital dari perjalanan, keahlian, dan proyek-proyek yang telah saya kerjakan sebagai seorang mahasiswa Informatika.
-
-🚀 **Lihat Live Demo:** [https://KenVer-Base.github.io/nama-repo-anda/](https://KenVer-Base.github.io/nama-repo-anda/)
-*(Ganti URL di atas dengan link GitHub Pages Anda yang sudah aktif)*
-
----
-
-## 🖼️ Pratinjau (Screenshot)
-
-![Pratinjau Website Portofolio]([nama-file-screenshot-anda.png])
-*(Ambil screenshot website Anda, tambahkan ke repositori, dan ganti nama file di atas)*
-
 ## ✨ Fitur Utama
 
 * **Desain Modern & Responsif:** Dibangun dengan pendekatan *mobile-first* dan tampil sempurna di semua perangkat, dari HP, tablet, hingga desktop.
@@ -31,31 +20,7 @@ Proyek ini dibangun murni menggunakan teknologi web front-end dasar:
 * **JavaScript (ES6+):** Untuk fungsionalitas interaktif seperti *smooth scroll* dan animasi *progress bar* saat di-scroll.
 * **Devicon:** Sebagai *font library* untuk ikon-ikon teknologi.
 
----
-
-## 🚀 Cara Menjalankan Secara Lokal
-
-Jika Anda ingin menjalankan proyek ini di mesin lokal Anda, ikuti langkah-langkah berikut:
-
-1.  **Clone repositori ini:**
-    ```bash
-    git clone [https://github.com/KenVer-Base/nama-repo-anda.git](https://github.com/KenVer-Base/nama-repo-anda.git)
-    ```
-
-2.  **Masuk ke direktori proyek:**
-    ```bash
-    cd nama-repo-anda
-    ```
-
-3.  **Buka file `index.html`:**
-    Cukup klik dua kali file `index.html` di dalam folder, dan file tersebut akan otomatis terbuka di browser default Anda.
-
----
-
-## 👤 Kontak
-
-Merasa terhubung? Mari berdiskusi!
-
+Hubungi jika anda berminat
 * **GitHub:** [@KenVer-Base](https://github.com/KenVer-Base)
 * **LinkedIn:** [Faqih Al Bashori](https://www.linkedin.com/in/faqih-al-bashori-36234b317/)
 * **Instagram:** [@q1hh_](https://www.instagram.com/q1hh_?igsh=Mm5xd2ZqazFjZXNq)
