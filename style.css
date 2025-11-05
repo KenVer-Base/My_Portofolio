@@ -1,0 +1,384 @@
+/* Pengaturan Dasar & Variabel Warna */
+:root {
+    --primary-color: #44a7ff; /* Warna aksen (biru cerah) */
+    --bg-color: #121212;      /* Latar belakang gelap */
+    --surface-color: #1e1e1e; /* Warna permukaan (untuk card, dll) */
+    --text-color: #e0e0e0;    /* Teks utama */
+    --text-secondary: #aaaaaa; /* Teks sekunder (abu-abu) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Efek smooth scroll */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Navigasi */
+nav {
+    background-color: var(--surface-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Bagian Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* Untuk memberi ruang dari nav */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3a8ee6;
+    transform: translateY(-3px);
+}
+
+/* Pengaturan Section Umum */
+section {
+    padding: 6rem 0;
+}
+
+section:nth-child(even) {
+    background-color: var(--surface-color);
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+/* Tentang Saya */
+.about {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 3px solid var(--primary-color);
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Keahlian */
+/* Ini adalah style dasar .skill-item Anda */
+.skill-item {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Tambahkan box-shadow & border-color */
+    
+    /* Jika Anda pakai Opsi 2 (ikon), biarkan display flex, dll. */
+    display: flex; /* Jika pakai ikon */
+    flex-direction: column; /* Jika pakai ikon */
+    align-items: center; /* Jika pakai ikon */
+    justify-content: center; /* Jika pakai ikon */
+    gap: 10px; /* Jika pakai ikon */
+    min-height: 120px; /* Jika pakai ikon */
+}
+
+/* Ini adalah efek saat kursor di atasnya */
+.skill-item:hover {
+    transform: translateY(-8px) scale(1.03); /* Sedikit naik dan sedikit membesar */
+    border-color: var(--primary-color);      /* Border berubah warna */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Tambahkan bayangan */
+    background-color: #2a2a2a; /* Sedikit lebih terang dari bg-color */
+}
+
+/* Jika Anda menggunakan ikon, pastikan ikon juga terlihat bagus saat hover */
+.skill-item:hover img {
+    filter: brightness(1.2); /* Sedikit mencerahkan ikon */
+}
+
+/* Jika Anda menggunakan ikon, dan ingin teksnya berubah warna */
+.skill-item:hover span {
+    color: var(--primary-color); /* Teks skill berubah warna */
+}
+
+/* --- Style untuk Keahlian dengan Progress Bar (Opsi 2) --- */
+
+.skills-list {
+    max-width: 800px; /* Batasi lebar agar tidak terlalu melebar di layar besar */
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem; /* Jarak antar item skill */
+}
+
+.skill-item-progress {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item-progress:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.skill-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+/* TAMBAHKAN INI UNTUK MENGATUR IKON DEVicon */
+.skill-name i {
+    font-size: 30px;  /* Atur ukuran ikon di sini */
+    line-height: 1; /* Membantu perataan vertikal */
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    height: 10px; /* Tinggi progress bar */
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    /* width: diatur inline di HTML (cth: style="width: 90%;") */
+    transition: width 0.8s ease-out; /* Animasi saat loading */
+}
+
+.skill-level {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .skill-item-progress {
+        padding: 1rem;
+    }
+    .skill-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* Proyek */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* --- Tambahan untuk konsistensi tinggi kartu --- */
+    display: flex;
+    flex-direction: column; /* Mengatur item di dalam kartu secara vertikal */
+    height: 100%; /* Penting: agar kartu mengambil tinggi maksimal dalam grid */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+}
+
+.project-card p {
+    padding: 0 1.5rem 1rem 1.5rem;
+    color: var(--text-secondary);
+}
+
+.project-card a {
+    display: block;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 0.8rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+    /* --- Tambahan untuk menempatkan tombol di bawah --- */
+    margin-top: auto; /* Mendorong tombol ke bagian bawah kartu */
+}
+
+.project-card a:hover {
+    background-color: #3a8ee6;
+}
+
+/* Kontak */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-color);
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #333;
+    color: var(--text-secondary);
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        display: none; /* Sembunyikan menu di HP untuk versi simpel ini */
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
